@@ -13,7 +13,7 @@ interface WheelSpinnerProps {
 export default function WheelSpinner({ names, isSpinning, onSpin }: WheelSpinnerProps) {
     const canvasRef = useRef<HTMLCanvasElement>(null)
     const rotationRef = useRef(0)
-    const animationRef = useRef<number>()
+    const animationRef = useRef<number>(0)
 
     const colors = [
         "#FF3B5C",

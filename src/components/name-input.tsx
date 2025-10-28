@@ -13,7 +13,7 @@ interface NameInputProps {
     onSetNames: (names: string[]) => void
 }
 
-export default function NameInput({ names, onAddName, onRemoveName, onSetNames }: NameInputProps) {
+export default function NameInput({ names, onRemoveName, onSetNames }: NameInputProps) {
     const [inputValue, setInputValue] = useState("")
 
     const handleSubmit = (e: React.FormEvent) => {
