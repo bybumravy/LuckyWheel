@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { Trophy } from "lucide-react"
+import { Trophy, X, RotateCcw } from "lucide-react"
 
 interface WinnerDisplayProps {
     winner: string
@@ -12,28 +12,37 @@ interface WinnerDisplayProps {
 
 export default function WinnerDisplay({ winner, onRemoveFromList, onKeepInList }: WinnerDisplayProps) {
     return (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm animate-in fade-in duration-300">
-            <Card className="w-full max-w-md mx-4 bg-gradient-to-br from-yellow-400 via-orange-400 to-red-500 border-4 border-yellow-300 shadow-2xl animate-in zoom-in duration-500">
-                <CardContent className="p-8 text-center space-y-6">
-                    <Trophy className="w-20 h-20 mx-auto text-white drop-shadow-lg animate-bounce" />
-                    <h2 className="text-3xl font-bold text-white drop-shadow-lg">Chúc mừng!</h2>
-                    <p className="text-5xl font-black text-white drop-shadow-lg break-words">{winner}</p>
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-background/80 backdrop-blur-md animate-in fade-in duration-300">
+            <Card className="w-full max-w-md mx-4 bg-card border-2 border-accent shadow-2xl animate-in zoom-in duration-500">
+                <CardContent className="p-10 text-center space-y-8">
+                    <div className="flex justify-center">
+                        <div className="bg-accent/10 p-6 rounded-full">
+                            <Trophy className="w-16 h-16 text-accent" />
+                        </div>
+                    </div>
 
-                    <div className="flex flex-col gap-3 mt-6">
-                        <Button
-                            onClick={onRemoveFromList}
-                            size="lg"
-                            className="bg-white text-red-600 hover:bg-red-50 font-bold shadow-lg"
-                        >
-                            Xóa khỏi danh sách
-                        </Button>
+                    <div className="space-y-3">
+                        <h2 className="text-2xl font-semibold text-muted-foreground">Người chiến thắng</h2>
+                        <p className="text-4xl font-bold text-foreground break-words leading-tight">{winner}</p>
+                    </div>
+
+                    <div className="flex flex-col gap-3 pt-4">
                         <Button
                             onClick={onKeepInList}
                             size="lg"
-                            variant="outline"
-                            className="bg-white/90 text-orange-600 hover:bg-white font-bold border-2 border-white shadow-lg"
+                            className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-lg"
                         >
-                            Giữ nguyên & Quay lại
+                            <RotateCcw className="w-4 h-4 mr-2" />
+                            Quay lại
+                        </Button>
+                        <Button
+                            onClick={onRemoveFromList}
+                            size="lg"
+                            variant="outline"
+                            className="border-2 font-semibold rounded-lg hover:bg-destructive/10 hover:text-destructive hover:border-destructive bg-transparent"
+                        >
+                            <X className="w-4 h-4 mr-2" />
+                            Xóa khỏi danh sách
                         </Button>
                     </div>
                 </CardContent>
