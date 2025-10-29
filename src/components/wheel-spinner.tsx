@@ -53,8 +53,8 @@ export default function WheelSpinner({ names, isSpinning, onSpin }: WheelSpinner
             // Nếu chưa có tên
             if (names.length === 0) {
                 const gradient = ctx.createRadialGradient(centerX, centerY, 0, centerX, centerY, radius)
-                gradient.addColorStop(0, "#f8f9fa")
-                gradient.addColorStop(1, "#e9ecef")
+                gradient.addColorStop(0, "#000088")
+                gradient.addColorStop(1, "#000088")
                 ctx.fillStyle = gradient
                 ctx.beginPath()
                 ctx.arc(centerX, centerY, radius, 0, 2 * Math.PI)
@@ -63,11 +63,11 @@ export default function WheelSpinner({ names, isSpinning, onSpin }: WheelSpinner
                 ctx.lineWidth = 3
                 ctx.stroke()
 
-                ctx.fillStyle = "#495057"
+                ctx.fillStyle = "#003D99"
                 ctx.font = `600 ${canvas.width / 22}px "Plus Jakarta Sans", Inter, sans-serif`
                 ctx.textAlign = "center"
                 ctx.textBaseline = "middle"
-                ctx.fillText("Bạn là imposter", centerX, centerY)
+                ctx.fillText("nana", centerX, centerY)
                 return
             }
 
@@ -129,11 +129,12 @@ export default function WheelSpinner({ names, isSpinning, onSpin }: WheelSpinner
 
             ctx.fillStyle = "#FF3B5C"
             ctx.beginPath()
-            ctx.moveTo(centerX + radius - 20, centerY - 18)
-            ctx.lineTo(centerX + radius + 20, centerY)
-            ctx.lineTo(centerX + radius - 20, centerY + 18)
+            ctx.moveTo(centerX + radius + 20, centerY - 18) // góc trên ngoài
+            ctx.lineTo(centerX + radius - 20, centerY)      // đỉnh nhọn chỉ vào trong
+            ctx.lineTo(centerX + radius + 20, centerY + 18) // góc dưới ngoài
             ctx.closePath()
             ctx.fill()
+
 
             ctx.strokeStyle = "#ffffff"
             ctx.lineWidth = 3

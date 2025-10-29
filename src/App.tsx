@@ -6,7 +6,7 @@ import NameInput from "./components/name-input"
 import WinnerDisplay from "./components/winner-display"
 
 export default function App() {
-    const [names, setNames] = useState<string[]>(["Nguyễn Văn A", "Trần Thị B", "Lê Văn C", "Phạm Thị D"])
+    const [names, setNames] = useState<string[]>([])
     const [winner, setWinner] = useState<string | null>(null)
     const [isSpinning, setIsSpinning] = useState(false)
 
@@ -50,10 +50,6 @@ export default function App() {
         <div className="min-h-screen flex flex-col bg-gradient-to-br from-background via-secondary/30 to-background">
             <div className="flex-1 container max-w-7xl mx-auto px-4 py-12 grid grid-cols-1 lg:grid-cols-[1fr_420px] gap-12 items-start">
                 <div className="flex flex-col items-center gap-8">
-                    {/*<div className="text-center space-y-3 mb-4">*/}
-                    {/*    <h1 className="text-4xl lg:text-5xl font-bold tracking-tight text-foreground">Vòng Quay May Mắn</h1>*/}
-                    {/*    <p className="text-muted-foreground text-lg">Chọn người chiến thắng một cách công bằng</p>*/}
-                    {/*</div>*/}
                     <WheelSpinner names={names} isSpinning={isSpinning} onSpin={handleSpin} />
                 </div>
 
