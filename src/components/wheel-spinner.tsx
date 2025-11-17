@@ -99,7 +99,8 @@ export default function WheelSpinner({ names, isSpinning, onSpin }: WheelSpinner
                 ctx.shadowColor = "rgba(0,0,0,0.4)"
                 ctx.shadowBlur = 6
                 ctx.shadowOffsetY = 2
-                ctx.fillText(name, radius * 0.65, 0)
+                const displayText = name.includes(":") ? name.split(":")[0].trim() : name
+                ctx.fillText(displayText, radius * 0.65, 0)
                 ctx.restore()
             })
 
