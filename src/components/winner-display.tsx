@@ -60,7 +60,7 @@ export default function WinnerDisplay({
                                 {!flipped ? (
                                     <p className="text-3xl font-bold text-foreground">{prompt}</p>
                                 ) : (
-                                    <p className="text-3xl font-bold text-purple-700">{answer}</p>
+                                    <p className="text-3xl font-bold text-purple-7  00">{answer}</p>
                                 )}
                             </div>
                         </div>
