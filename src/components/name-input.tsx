@@ -60,7 +60,7 @@ export default function NameInput({ names, onRemoveName, onSetNames }: NameInput
 
                 <div className="space-y-2 max-h-[400px] overflow-y-auto pr-2">
                     {names.length === 0 ? (
-                        <p className="text-muted-foreground text-center py-8 text-sm">Của tao của tao</p>
+                        <p className="text-muted-foreground text-center py-8 text-sm">Hà Vy</p>
                     ) : (
                         names.map((name, index) => (
                             <div
